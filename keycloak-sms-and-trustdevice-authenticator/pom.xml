@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>com.peps</groupId>
+		<artifactId>keycloak-sms-and-trustdevice-authenticator-maker</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<name>Keycloak Authenticator Maker</name>
+	<description />
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>keycloak-sms-and-trustdevice-authenticator</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0.0</version>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-services</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-server-spi-private</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-server-spi</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>eu.bitwalker</groupId>
+			<artifactId>UserAgentUtils</artifactId>
+			<version>1.21</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.jboss.resteasy.resteasy-jackson2-provider,org.keycloak.keycloak-server-spi-private,org.jboss.logging,org.jboss.logging,org.keycloak.keycloak-common,org.keycloak.keycloak-services,org.keycloak.keycloak-core,org.keycloak.keycloak-server-spi</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+</project>
